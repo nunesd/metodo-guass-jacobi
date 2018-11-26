@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./index.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="./css.css">
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="wrapper">
+                <h2>Método de Gauss-Jacobi</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="wrapper">
+                <span>Equação 1:</span>
+                <span>x</span> <input type="text" class="eqUmX" />
+                <span>y</span> <input type="text" class="eqUmY" />
+                <span>z</span> <input type="text" class="eqUmZ" />
+                <span>=</span> <input type="text" class="eqUmRes" />
+            </div>
+            <div class="wrapper">
+                <span>Equação 2:</span>
+                <span>y</span> <input type="text" class="eqDoisX" />
+                <span>x</span> <input type="text" class="eqDoisY" />
+                <span>z</span> <input type="text" class="eqDoisZ" />
+                <span>=</span> <input type="text" class="eqDoisRes" />
+            </div>
+            <div class="wrapper">
+                <span>Equação 3:</span>
+                <span>x</span> <input type="text" class="eqTresX" />
+                <span>y</span> <input type="text" class="eqTresY" />
+                <span>z</span> <input type="text" class="eqTresZ" />
+                <span>=</span> <input type="text" class="eqTresRes" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="wrapper">
+                    <span>Resposta:</span>
+                    <span>x</span> <input type="text" class="xResp" />
+                    <span>y</span> <input type="text" class="yResp" />
+                    <span>z</span> <input type="text" class="zResp" />
+            </div>
+        </div>
+        <div class="row">
+            <button onclick="calcular();"> Calcular</button>
+        </div>
+    </div>
+    <div class="container2">
+        <div class="row">
+            <div class="wrapper">
+                <div class="iteracoesdiv">
+                    <span>Iterações:</span> <input class="iteracoes" type="text" />
+                </div>
+            </div>
+        </div>
+        <div class="row2">
+            <div class="wrapper2" id="wrapper2">
+
+            </div>
+        </div>
+    </div>
+</body>
+</html>
