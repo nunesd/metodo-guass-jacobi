@@ -94,6 +94,13 @@ function calcular() {
         return;
     }
 
+    var testeDeterminante = testeDeterminante();
+
+    if(!testeDeterminante) {
+         alert("o sistema possui infinitas soluções");
+         return
+    }
+
     var converge = criterioDeLinha();
 
     if(!converge){
@@ -104,6 +111,76 @@ function calcular() {
     jacobi();
 
 
+}
+
+function testeDeterminante() {
+    equacaoUm[0] = parseInt(document.querySelector(".eqUmX").value);
+    equacaoUm[1] = parseInt(document.querySelector(".eqUmY").value);
+    equacaoUm[2] = parseInt(document.querySelector(".eqUmZ").value);
+    equacaoUm[3] = parseInt(document.querySelector(".eqUmRes").value);
+
+    equacaoDois[0] = parseInt(document.querySelector(".eqDoisX").value);
+    equacaoDois[1] = parseInt(document.querySelector(".eqDoisY").value);
+    equacaoDois[2] = parseInt(document.querySelector(".eqDoisZ").value);
+    equacaoDois[3] = parseInt(document.querySelector(".eqDoisRes").value);
+    
+    equacaoTres[0] = parseInt(document.querySelector(".eqTresX").value);
+    equacaoTres[1] = parseInt(document.querySelector(".eqTresY").value);
+    equacaoTres[2] = parseInt(document.querySelector(".eqTresZ").value);
+    equacaoTres[3] = parseInt(document.querySelector(".eqTresRes").value);
+
+    deta = (equacaoUm[0] * equacaoDois[1] * equacaoTres[2]) + (equacaoUm[1] * equacaoDois[2] * equacaoTres[0])
+	        + (equacaoUm[2] * equacaoDois[0] * equacaoTres[1]);
+
+	 detb = (equacaoUm[2] * equacaoDois[1] * equacaoTres[0]) + (equacaoUm[0] * equacaoDois[2] * equacaoTres[1])
+	        + (equacaoUm[1] * equacaoDois[0] * equacaoTres[2]);
+
+
+	 det1 = deta - detb;
+
+	 //===================================================================================================
+
+
+	 deta = (equacaoUm[3] * equacaoDois[1] * equacaoTres[2]) + (equacaoUm[1] * equacaoDois[2] * equacaoTres[3])
+	        + (equacaoUm[2] * equacaoDois[3] * equacaoTres[1]);
+
+	 detb = (equacaoUm[2] * equacaoDois[1] * equacaoTres[3]) + (equacaoUm[3] * equacaoDois[2] * equacaoTres[1])
+	        + (equacaoUm[1] * equacaoDois[3] * equacaoTres[2]);
+
+
+	 det2 = deta - detb;
+
+	 //===================================================================================================
+
+
+	 deta = (equacaoUm[0] * equacaoDois[3] * equacaoTres[2]) + (equacaoUm[3] * equacaoDois[2] * equacaoTres[0])
+	        + (equacaoUm[2] * equacaoDois[0] * equacaoTres[3]);
+
+	 detb = (equacaoUm[2] * equacaoDois[3] * equacaoTres[0]) + (equacaoUm[0] * equacaoDois[2] * equacaoTres[3])
+	        + (equacaoUm[3] * equacaoDois[0] * equacaoTres[2]);
+
+
+	 det3 = deta - detb;
+
+	 //===================================================================================================
+
+
+	 deta = (equacaoUm[0] * equacaoDois[1] * equacaoTres[3]) + (equacaoUm[1] * equacaoDois[3] * equacaoTres[0])
+	        + (equacaoUm[3] * equacaoDois[0] * equacaoTres[1]);
+
+	 detb = (equacaoUm[3] * equacaoDois[1] * equacaoTres[0]) + (equacaoUm[0] * equacaoDois[3] * equacaoTres[1])
+	        + (equacaoUm[1] * equacaoDois[0] * equacaoTres[3]);
+
+
+	 det4 = deta - detb;
+
+	 //===================================================================================================
+
+
+	if (det1 == det2 && det2 == det3 && det3 == det4) {
+        return 0;    
+    }
+        return 1;
 }
 
 function jacobi() {
